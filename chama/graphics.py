@@ -82,7 +82,7 @@ def signal_convexhull(signal, scenarios, threshold, timesteps=None,
                 # ax.scatter(data[:,0], data[:,1], data[:,2], c=data[:,3],s=30)
                 
                 data = signal_t[[x_col, y_col, z_col]][conc_filter]
-                data = data.as_matrix()
+                data = data.values
                 hull = ConvexHull(data)
                 ax.plot_trisurf(data[:, 0], data[:, 1], data[:, 2],
                                 triangles=hull.simplices,
